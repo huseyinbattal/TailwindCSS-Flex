@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Flex</title>
+  </head>
+  <body class="m-20">
+    <div class="shadow-lg shadow-red-500 w-full">
+      <div id="div1" class="flex h-96 w-full bg-red-100">
+        <div class="p-5 w-1/4 h-1/4 border border-blue-500 bg-blue-100">01</div>
+        <div class="p-5 w-1/4 h-1/4 border border-blue-500 bg-blue-100">02</div>
+        <div class="p-5 w-1/4 h-1/4 border border-blue-500 bg-blue-100">03</div>
+        <div class="p-5 w-1/4 h-1/4 border border-blue-500 bg-blue-100">04</div>
+      </div>
+    </div>
+    <div class="flex justify-center">
+      <button class="ml-5 mt-5 p-5 rounded-2xl bg-blue-400 hover:bg-blue-100 border border-blue-500" id="button1">items-start<br />flex-row</button>
+      <button class="ml-5 mt-5 p-5 rounded-2xl bg-blue-400 hover:bg-blue-100 border border-blue-500" id="button2">items-center<br />flex-row</button>
+      <button
+        class="ml-5 mt-5 p-5 rounded-2xl bg-blue-400 hover:bg-blue-100 border border-blue-500"
+        id="button3">items-end <br />flex-row</button>
+        <button
+        class="ml-5 mt-5 p-5 rounded-2xl bg-red-400 hover:bg-red-100 border border-red-500"
+        id="button4">items-start <br />flex-col</button>
+        <button
+        class="ml-5 mt-5 p-5 rounded-2xl bg-red-400 hover:bg-red-100 border border-red-500"
+        id="button5">items-center <br />flex-col</button>
+        <button
+        class="ml-5 mt-5 p-5 rounded-2xl bg-red-400 hover:bg-red-100 border border-red-500"
+        id="button6">items-end <br />flex-col</button>
+    </div>
+  
+</div>
+    <script>
+      let divOne = document.getElementById("div1");
+      let buttonOne = document.getElementById("button1");
+      let buttonTwo = document.getElementById("button2");
+      let buttonThree = document.getElementById("button3");
+      let buttonFour = document.getElementById("button4");
+      let buttonFive = document.getElementById("button5");
+      let buttonSix = document.getElementById("button6");
+      
+      buttonOne.addEventListener("click", () => {
+        divOne.classList.remove("items-center","items-end","flex-col");
+        divOne.classList.add("items-start");
+      });
+      buttonTwo.addEventListener("click", () => {
+        divOne.classList.remove("items-start","flex-col","items-end");
+        divOne.classList.add("items-center");
+      });
+      buttonThree.addEventListener("click", () => {
+        divOne.classList.remove("items-start","items-center","flex-col");
+        divOne.classList.add("items-end");
+      });
+      buttonFour.addEventListener("click", () => {
+        divOne.classList.remove("items-center","items-end");
+        divOne.classList.add("items-start", "flex-col");
+      });
+      buttonFive.addEventListener("click", () => {
+        divOne.classList.remove("items-start","items-center","items-end");
+        divOne.classList.add("items-center", "flex-col");
+      });
+      buttonSix.addEventListener("click", () => {
+        divOne.classList.remove("items-start","items-center");
+        divOne.classList.add("items-end", "flex-col");
+      });
+    </script>
+  </body>
+</html>
